@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if notice_list %}
+        <ul>
+            {% for notice in notice_list %}
+                <div class="el-timeline-item__content" style="padding-bottom: 10px;background-color: azure">
+                    <div class="el-card is-always-shadow">
+                    <!---->
+                        <div class="el-card__body">
+{#                            <p>admin 2022年3月1日 08:48</p>#}
+                            <a class="el-link--primary" href ="/notice/{{ notice.id }}" style="color: blue">{{ notice.notice_name }}</a>
+                        </div>
+
+                    </div>
+                </div>
+{#                <div class="el-card__body .el-card.is-always-shadow .el-card.is-hover-shadow:focus .el-card.is-hover-shadow:hover">#}
+{#                 <li class="el-card__header" style=" height: 80px ;background-color: #f1f1f1"> </li>#}
+{#                </div>#}
+            {% endfor %}
+
+        </ul>
+    {% else %}
+        <p>暂时没有通知</p>
+    {% endif %}
+{% endblock %}

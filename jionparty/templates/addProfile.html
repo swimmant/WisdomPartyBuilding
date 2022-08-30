@@ -1,0 +1,21 @@
+{# 加载标签库 #}
+{% load bootstrap4 %}
+{# 加载css和javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{# 显示警告弹窗 #}
+{% bootstrap_messages %}
+
+<div class="container" style="padding-left: 200px">
+    <h2 style="margin-left: 25vh">填写个人信息</h2>
+    <form method="post" class="form" style="width: 600px;margin-left: 5px">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+                提交
+            </button>
+        {% endbuttons %}
+    </form>
+</div>

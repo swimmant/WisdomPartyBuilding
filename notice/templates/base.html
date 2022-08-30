@@ -1,0 +1,71 @@
+{# 加载标签库 #}
+{% load bootstrap4 %}
+{# 加载css和javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{# 显示警告弹窗 #}
+{% bootstrap_messages %}
+
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+{% block header %}
+    <el-container>
+        <el-header >
+        <div id="header" style="background-color: brown;padding-bottom: 15px" >
+            <div  style="padding-top:10px; margin-left:25px;width: 500px;font-size: 25px; font-family:'Helvetica Neue' ;display: inline-block;">智慧党建系统</div>
+            <a href="/"  style="padding-top:10px;padding-right:15px ;width: 200px;font-size: 25px;"> 首页 </a>
+            <a href="/profile"  style="padding-top:10px;padding-right:15px ;width: 200px;font-size: 25px;"> 个人资料 </a>
+            <a href="/studyline"  style="padding-top:10px;padding-right:15px ;width: 200px;font-size: 25px;"> 在线学习 </a>
+            <a href="/studyfile"  style="padding-top:10px;padding-right:15px ;width: 200px;font-size: 25px;"> 学习资料 </a>
+            {% if user.is_authenticated %}
+
+                <div style="padding-top:15px;padding-right: 25px ; width: 200px; display: inline-block;float:right">
+                    <a class="el-link--primary"  href="/profile" style="text-decoration: none;color: #007bff;padding-right: 20px"    >
+                        {{ user.username }}
+                    </a>
+
+                    <a class="el-link--primary" href="/accounts/logout" style="text-decoration: none;color: #007bff"    >
+                        退出
+                    </a>
+                </div>
+            {% else %}
+                <div style="padding-top:15px ; width: 50px; display: inline-block;float:right">
+                    <a class="el-link--primary" href="/accounts/login" style="text-decoration: none;color: #007bff"    >
+                        登录
+                    </a>
+                </div>
+            {% endif %}
+            <div style="font-size: 15px;margin-left: 30px;">欢迎来到党员大家庭，不忘初心，牢记使命！</div>
+        </div>
+        </el-header>
+        <el-main>
+            <div id="mian" style="padding-top: 30px">
+{#            <div>#}
+{#                <div style="text-align:center;width: 200px;height: 60px;padding-bottom: 20px">#}
+{#                    <span style="font-size: 25px; font-family:'Helvetica Neue';" >#}
+{#                        <i style="padding: 20px;background-color: brown;">设计素材</i>#}
+{##}
+{#                    </span>#}
+{#                </div>#}
+{#            </div>#}
+            {% block content %}
+            {% endblock %}
+            </div>
+        </el-main>
+    </el-container>
+
+{#    <a href="/" style="text-decoration: none;color: #007bff">首页</a>#}
+{#    <a href="/noticelist" style="text-decoration: none;color: #007bff">通知</a>#}
+{#    {% if user.is_authenticated %}#}
+{#        <div >{{ user.username }}</div>#}
+{#        <a href="/accounts/logout" style="text-decoration: none;color: #007bff">退出</a>#}
+{#    {% else %}#}
+{#        <a href="/accounts/login" style="text-decoration: none;color: #007bff">登录</a>#}
+{##}
+{#    {% endif %}#}
+
+
+{% endblock %}

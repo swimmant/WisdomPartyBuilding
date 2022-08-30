@@ -1,0 +1,5 @@
+django==3.2
+django-simpleui
+django-bootstrap4
+django-registration-redux
+pymysql

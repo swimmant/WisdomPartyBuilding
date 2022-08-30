@@ -1,0 +1,46 @@
+{# 加载标签库 #}
+{% load bootstrap4 %}
+{# 加载css和javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{# 显示警告弹窗 #}
+{% bootstrap_messages %}
+
+<div class="container">
+    <div style="padding-bottom: 30px">
+        <h1 style="text-align: center"> 个人详情页面</h1>
+        <button style="float: right" onclick="location.href='/profile'" class="btn btn-info">返回</button>
+
+    </div>
+    <div style="padding-left: 35vh">
+
+    <div style="margin-bottom: 60px">
+        <span class="col-5">姓名：{{ object.username }}</span>
+        <span class="col-5">年龄：{{ object.age }}</span>
+        <span class="col-3">性别：{{ object.gender }}</span>
+        <span class="col-3">籍贯：{{ object.born_address }}</span>
+
+
+    </div>
+    <div style="margin-bottom: 60px">
+        <span class="col-5">电话：{{ object.phone }}</span>
+        <span class="col-3">邮件：{{ object.email }}</span>
+        {% if object.applicant_status is None %}
+            <span class="col-3">入党状态：待审核</span>
+        {% else %}
+            <span class="col-3">入党状态：{{ object.applicant_status }}</span>
+        {% endif %}
+
+    </div>
+    <div style="margin-bottom: 60px">
+        <span class="col-3">政治面貌：{{ object.identity }}</span>
+        <span class="col-3">学院：{{ object.college }}</span>
+        <span class="col-3">专业：{{ object.major }}</span>
+        <span class="col-3">学历：{{ object.degree }}</span>
+        <span class="col-3">年级：{{ object.grade }}</span>
+
+    </div>
+    <div style="margin-bottom: 60px">个人介绍：{{ object.applicant_introduction }}</div>
+    <div style="margin-bottom: 60px">入党理由：{{ object.applicant_reason }}</div>
+</div>
+</div>

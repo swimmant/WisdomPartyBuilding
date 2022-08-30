@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="container" style="padding-top: 10vh;" >
+        <button style="float: right;margin-right: 30px" onclick="location.href='/'" class="btn btn-info">返回首页</button>
+
+            <div  style="padding-left:80px;width: 300px;display: inline-block">
+            <el-card :body-style="{ padding: '0px' }">
+                <img src="https://api.iowen.cn/favicon/book.sciencereading.cn.png" class="image" style="width: 180px">
+                <div style="padding: 14px; width: 180px">
+                    <span>在线免费阅读</span>
+                    <div class="bottom clearfix">
+                        <a href="https://book.sciencereading.cn"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                    </div>
+                </div>
+            </el-card>
+            </div>
+            <div  style="padding-left:80px;width: 300px;display: inline-block">
+                <el-card :body-style="{ padding: '0px' }">
+                    <img src="https://api.iowen.cn/favicon/www.yxgapp.com.png" class="image" style="width: 180px">
+                    <div style="padding: 14px;">
+                        <span>知识无疆界</span>
+                        <div class="bottom clearfix">
+                            <a href="https://www.yxgapp.com"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                        </div>
+                    </div>
+                </el-card>
+            </div>
+        <div  style="padding-left:80px;width: 300px;display: inline-block">
+            <el-card :body-style="{ padding: '0px' }">
+                <img src="https://api.iowen.cn/favicon/www.w3school.com.cn.png" class="image" style="width: 180px">
+                <div style="padding: 14px;">
+                    <span>中文 Web 技术教程。</span>
+                    <div class="bottom clearfix">
+                        <a href="https://www.w3school.com.cn/index.html"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+        <div  style="padding-left:80px;width: 300px;display: inline-block">
+            <el-card :body-style="{ padding: '0px' }">
+                <img src="https://api.iowen.cn/favicon/www.vocabulary.com.png" class="image" style="width: 180px">
+                <div style="padding: 14px;">
+                    <span>自学完全免费英语教程。</span>
+                    <div class="bottom clearfix">
+                        <a href="https://www.vocabulary.com"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+        <div  style="padding-left:80px;width: 300px;display: inline-block">
+            <el-card :body-style="{ padding: '0px' }">
+                <img src="https://api.iowen.cn/favicon/study.163.com.png" class="image" style="width: 180px">
+                <div style="padding: 14px;">
+                    <span>网易云课堂</span>
+                    <div class="bottom clearfix">
+                        <a href="https://study.163.com"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+
+        <div  style="padding-left:80px;width: 300px;display: inline-block">
+            <el-card :body-style="{ padding: '0px' }">
+                <img src="https://api.iowen.cn/favicon/1s1k.eduyun.cn.png" class="image" style="width: 180px">
+                <div style="padding: 14px;">
+                    <span>小、初、高在线教育平台</span>
+                    <div class="bottom clearfix">
+                        <a href="http://1s1k.eduyun.cn/portal/html/1s1k/course/1.html"  target="_blank"><el-button type="text" class="button">GO</el-button></a>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+    </div>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return { visible: false }
+        }
+    })
+
+    export default {
+        data() {
+            return {
+                currentDate: [
+                    {
+                        img: 'https://api.iowen.cn/favicon/book.sciencereading.cn.png',
+                        link :"https://book.sciencereading.cn",
+                        mes : '几乎拥有国内所有教科书籍，支持在线免费阅读'
+
+                    }
+                ]
+            };
+        }
+    }
+</script>
+<style>
+    .time {
+        font-size: 13px;
+        color: #999;
+    }
+
+    .bottom {
+        margin-top: 13px;
+        line-height: 12px;
+    }
+
+    .button {
+        padding: 0;
+        float: right;
+    }
+
+    .image {
+        width: 100%;
+        display: block;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        content: "";
+    }
+
+    .clearfix:after {
+        clear: both
+    }
+</style>
+
+</html>

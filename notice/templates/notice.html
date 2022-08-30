@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    <div style="font-size: 15px;margin-left: 25px;background-color: #f1f1f1">#}
+{#        <a class="el-link--primary" href="/noticelist">返回通知列表</a><p></p>#}
+{#    </div>#}
+    <div style="margin: auto;width: 50%">
+    {% if notice %}
+        <div ></div>
+        <h2>{{ notice.notice_name }}</h2>
+        <hr>
+        <h6>{{ notice.notice_content }}</h6>
+    {% else %}
+        <p>通知不存在</p>
+    {% endif %}
+    </div>
+{% endblock %}

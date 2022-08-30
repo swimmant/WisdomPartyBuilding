@@ -1,0 +1,39 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{# 加载标签库 #}
+{% load bootstrap4 %}
+{# 加载css和javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{# 显示警告弹窗 #}
+{% bootstrap_messages %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div style="padding-left: 100px">
+        <form method="post" action="">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+{#            {{ form.as_p }}#}
+            <button type="submit" value="提交" class="btn btn-info">提交</button>
+
+        </form>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% comment %}
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+{% endcomment %}
